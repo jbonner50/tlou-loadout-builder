@@ -30,6 +30,7 @@ class LoadoutManager extends StatelessWidget {
     return MaterialApp(
       home: App(),
       theme: ThemeData(
+        dividerColor: Color.fromARGB(255, 234, 234, 219),
         fontFamily: 'TLOU',
         accentColor: Color.fromARGB(255, 234, 234, 219),
       ),

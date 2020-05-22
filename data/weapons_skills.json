@@ -14,24 +14,28 @@
       "reload": 3,
       "damage": 5,
       "accuracy": 6,
-      "more": [
-        {
-          "label": "Body Damage",
-          "value": "35%"
-        },
-        {
-          "label": "Head Damage",
-          "value": "70%"
-        },
-        {
-          "label": "Destroy Armour",
-          "value": "2 shots"
-        },
-        {
-          "label": "Execution",
-          "value": "2 shots"
-        }
-      ]
+      "general stats": {
+        "ammo cost": 140,
+        "ammo": 180,
+        "cost lvl 1": 300,
+        "cost lvl 2": 500
+      },
+      "damage stats": {
+        "body": 34,
+        "head": 68,
+        "destroy body": 2,
+        "destroy head": 2,
+        "break damage body": 25,
+        "break damage head": 35
+      },
+      "upgrade stats": {
+        "spawn ammo base": 7,
+        "spawn ammo lvl 1": 9,
+        "spawn ammo lvl 2": 11,
+        "clip size base": 6,
+        "clip size lvl 1": 7,
+        "clip size lvl 2": 8
+      }
     },
     {
       "id": "9mm",
@@ -52,24 +56,28 @@
       "reload": 6,
       "damage": 2,
       "accuracy": 4,
-      "more": [
-        {
-          "label": "Body Damage",
-          "value": "20%"
-        },
-        {
-          "label": "Head Damage",
-          "value": "60%"
-        },
-        {
-          "label": "Destroy Armour",
-          "value": "3 shots"
-        },
-        {
-          "label": "Execution",
-          "value": "3 shots"
-        }
-      ]
+      "general stats": {
+        "ammo cost": 150,
+        "ammo": 5,
+        "cost lvl 1": 250,
+        "cost lvl 2": 500
+      },
+      "damage stats": {
+        "body": 20,
+        "head": 60,
+        "destroy body": 3,
+        "destroy head": 2,
+        "break damage body": 17.5,
+        "break damage head": 20
+      },
+      "upgrade stats": {
+        "spawn ammo base": 10,
+        "spawn ammo lvl 1": 13,
+        "spawn ammo lvl 2": 15,
+        "clip size base": 7,
+        "clip size lvl 1": 9,
+        "clip size lvl 2": 11
+      }
     },
     {
       "id": "shorty",
@@ -90,28 +98,28 @@
       "reload": 3,
       "damage": 6,
       "accuracy": 5,
-      "more": [
-        {
-          "label": "Body Damage",
-          "value": "60%"
-        },
-        {
-          "label": "Head Damage",
-          "value": "80%"
-        },
-        {
-          "label": "Destroy Armour",
-          "value": "1 shot"
-        },
-        {
-          "label": "Execution",
-          "value": "1 shot"
-        },
-        {
-          "label": "",
-          "value": "* The Shorty, Shotgun, and Launcher are subject to 'effective distance' and have damage estimates."
-        }
-      ]
+      "general stats": {
+        "ammo cost": 75,
+        "ammo": 1,
+        "cost lvl 1": 250,
+        "cost lvl 2": 500
+      },
+      "damage stats": {
+        "body": 60,
+        "head": 60,
+        "destroy body": 1,
+        "destroy head": 2,
+        "break damage body": 17.5,
+        "break damage head": 20
+      },
+      "upgrade stats": {
+        "spawn ammo base": 7,
+        "spawn ammo lvl 1": 7,
+        "spawn ammo lvl 2": 7,
+        "clip size base": 2,
+        "clip size lvl 1": 2,
+        "clip size lvl 2": 2
+      }
     },
     {
       "id": "enforcer",
@@ -132,24 +140,28 @@
       "reload": 6,
       "damage": 4,
       "accuracy": 7,
-      "more": [
-        {
-          "label": "Body Damage",
-          "value": "25%"
-        },
-        {
-          "label": "Head Damage",
-          "value": "55%"
-        },
-        {
-          "label": "Destroy Armour",
-          "value": "2 shots"
-        },
-        {
-          "label": "Execution",
-          "value": "2 shots"
-        }
-      ]
+      "general stats": {
+        "ammo cost": 160,
+        "ammo": 5,
+        "cost lvl 1": 300,
+        "cost lvl 2": 500
+      },
+      "damage stats": {
+        "body": 25,
+        "head": 50,
+        "destroy body": 2,
+        "destroy head": 2,
+        "break damage body": 5,
+        "break damage head": 0
+      },
+      "upgrade stats": {
+        "spawn ammo base": 8,
+        "spawn ammo lvl 1": 12,
+        "spawn ammo lvl 2": 15,
+        "clip size base": 7,
+        "clip size lvl 1": 9,
+        "clip size lvl 2": 11
+      }
     },
     {
       "id": "burstp",
@@ -170,24 +182,28 @@
       "reload": 6,
       "damage": 3,
       "accuracy": 3,
-      "more": [
-        {
-          "label": "Body Damage",
-          "value": "22%"
-        },
-        {
-          "label": "Head Damage",
-          "value": "44%"
-        },
-        {
-          "label": "Destroy Armour",
-          "value": "3 shots"
-        },
-        {
-          "label": "Execution",
-          "value": "3 shots"
-        }
-      ]
+      "general stats": {
+        "ammo cost": 120,
+        "ammo": 3,
+        "cost lvl 1": 300,
+        "cost lvl 2": 500
+      },
+      "damage stats": {
+        "body": 22,
+        "head": 44,
+        "destroy body": 2,
+        "destroy head": 3,
+        "break damage body": 0,
+        "break damage head": 32.5
+      },
+      "upgrade stats": {
+        "spawn ammo base": 12,
+        "spawn ammo lvl 1": 15,
+        "spawn ammo lvl 2": 18,
+        "clip size base": 9,
+        "clip size lvl 1": 11,
+        "clip size lvl 2": 12
+      }
     }
   ],
   "large": [
@@ -221,24 +237,28 @@
       "reload": 3,
       "damage": 6,
       "accuracy": 7,
-      "more": [
-        {
-          "label": "Body Damage",
-          "value": "55%"
-        },
-        {
-          "label": "Head Damage",
-          "value": "55%"
-        },
-        {
-          "label": "Destroy Armour",
-          "value": "1 shot"
-        },
-        {
-          "label": "Execution",
-          "value": "1 shot"
-        }
-      ]
+      "general stats": {
+        "ammo cost": 210,
+        "ammo": 3,
+        "cost lvl 1": 400,
+        "cost lvl 2": 800
+      },
+      "damage stats": {
+        "body": 55,
+        "head": 55,
+        "destroy body": 1,
+        "destroy head": 2,
+        "break damage body": 10,
+        "break damage head": 10
+      },
+      "upgrade stats": {
+        "spawn ammo base": 5,
+        "spawn ammo lvl 1": 6,
+        "spawn ammo lvl 2": 7,
+        "clip size base": 3,
+        "clip size lvl 1": 3,
+        "clip size lvl 2": 4
+      }
     },
     {
       "id": "frontier",
@@ -259,24 +279,28 @@
       "reload": 2,
       "damage": 7,
       "accuracy": 7,
-      "more": [
-        {
-          "label": "Body Damage",
-          "value": "66%"
-        },
-        {
-          "label": "Head Damage",
-          "value": "92%"
-        },
-        {
-          "label": "Destroy Armour",
-          "value": "1 shot"
-        },
-        {
-          "label": "Execution",
-          "value": "1 shot"
-        }
-      ]
+      "general stats": {
+        "ammo cost": 225,
+        "ammo": 3,
+        "cost lvl 1": 300,
+        "cost lvl 2": 600
+      },
+      "damage stats": {
+        "body": 67.5,
+        "head": 92.5,
+        "destroy body": 1,
+        "destroy head": 2,
+        "break damage body": 22.5,
+        "break damage head": 82.5
+      },
+      "upgrade stats": {
+        "spawn ammo base": 6,
+        "spawn ammo lvl 1": 8,
+        "spawn ammo lvl 2": 9,
+        "clip size base": 4,
+        "clip size lvl 1": 5,
+        "clip size lvl 2": 6
+      }
     },
     {
       "id": "semi",
@@ -297,24 +321,28 @@
       "reload": 4,
       "damage": 5,
       "accuracy": 7,
-      "more": [
-        {
-          "label": "Body Damage",
-          "value": "34%"
-        },
-        {
-          "label": "Head Damage",
-          "value": "75%"
-        },
-        {
-          "label": "Destroy Armour",
-          "value": "2 shots"
-        },
-        {
-          "label": "Execution",
-          "value": "2 shots"
-        }
-      ]
+      "general stats": {
+        "ammo cost": 220,
+        "ammo": 4,
+        "cost lvl 1": 400,
+        "cost lvl 2": 800
+      },
+      "damage stats": {
+        "body": 34,
+        "head": 68,
+        "destroy body": 2,
+        "destroy head": 2,
+        "break damage body": 25,
+        "break damage head": 35
+      },
+      "upgrade stats": {
+        "spawn ammo base": 7,
+        "spawn ammo lvl 1": 8,
+        "spawn ammo lvl 2": 9,
+        "clip size base": 8,
+        "clip size lvl 1": 11,
+        "clip size lvl 2": 14
+      }
     },
     {
       "id": "full",
@@ -335,24 +363,28 @@
       "reload": 4,
       "damage": 2,
       "accuracy": 5,
-      "more": [
-        {
-          "label": "Body Damage",
-          "value": "20%"
-        },
-        {
-          "label": "Head Damage",
-          "value": "50%"
-        },
-        {
-          "label": "Destroy Armour",
-          "value": "3 shots"
-        },
-        {
-          "label": "Execution",
-          "value": "3 shots"
-        }
-      ]
+      "general stats": {
+        "ammo cost": 200,
+        "ammo": 5,
+        "cost lvl 1": 300,
+        "cost lvl 2": 600
+      },
+      "damage stats": {
+        "body": 20,
+        "head": 40,
+        "destroy body": 3,
+        "destroy head": 3,
+        "break damage body": 17.5,
+        "break damage head": 20
+      },
+      "upgrade stats": {
+        "spawn ammo base": 12,
+        "spawn ammo lvl 1": 15,
+        "spawn ammo lvl 2": 18,
+        "clip size base": 12,
+        "clip size lvl 1": 15,
+        "clip size lvl 2": 18
+      }
     },
     {
       "id": "burst",
@@ -373,24 +405,28 @@
       "reload": 4,
       "damage": 3,
       "accuracy": 4,
-      "more": [
-        {
-          "label": "Body Damage",
-          "value": "22%"
-        },
-        {
-          "label": "Head Damage",
-          "value": "80%"
-        },
-        {
-          "label": "Destroy Armour",
-          "value": "3 shots"
-        },
-        {
-          "label": "Execution",
-          "value": "3 shots"
-        }
-      ]
+      "general stats": {
+        "ammo cost": 120,
+        "ammo": 3,
+        "cost lvl 1": 300,
+        "cost lvl 2": 600
+      },
+      "damage stats": {
+        "body": 22,
+        "head": 66,
+        "destroy body": 2,
+        "destroy head": 2,
+        "break damage body": 0,
+        "break damage head": 32.5
+      },
+      "upgrade stats": {
+        "spawn ammo base": 15,
+        "spawn ammo lvl 1": 18,
+        "spawn ammo lvl 2": 21,
+        "clip size base": 9,
+        "clip size lvl 1": 12,
+        "clip size lvl 2": 15
+      }
     },
     {
       "id": "hunting",
@@ -411,24 +447,28 @@
       "reload": 2,
       "damage": 8,
       "accuracy": 9,
-      "more": [
-        {
-          "label": "Body Damage",
-          "value": "70%"
-        },
-        {
-          "label": "Head Damage",
-          "value": "100%"
-        },
-        {
-          "label": "Destroy Armour",
-          "value": "1 shot"
-        },
-        {
-          "label": "Execution",
-          "value": "1 shot"
-        }
-      ]
+      "general stats": {
+        "ammo cost": 240,
+        "ammo": 3,
+        "cost lvl 1": 300,
+        "cost lvl 2": 600
+      },
+      "damage stats": {
+        "body": 70,
+        "head": 100,
+        "destroy body": 1,
+        "destroy head": 1,
+        "break damage body": 25,
+        "break damage head": 70
+      },
+      "upgrade stats": {
+        "spawn ammo base": 5,
+        "spawn ammo lvl 1": 6,
+        "spawn ammo lvl 2": 7,
+        "clip size base": 1,
+        "clip size lvl 1": 1,
+        "clip size lvl 2": 1
+      }
     },
     {
       "id": "bow",
@@ -444,24 +484,28 @@
       "reload": 4,
       "damage": 6,
       "accuracy": 7,
-      "more": [
-        {
-          "label": "Body Damage",
-          "value": "55%"
-        },
-        {
-          "label": "Head Damage",
-          "value": "100%"
-        },
-        {
-          "label": "Destroy Armour",
-          "value": "1 shot"
-        },
-        {
-          "label": "Execution",
-          "value": "1 shot"
-        }
-      ]
+      "general stats": {
+        "ammo cost": 195,
+        "ammo": 3,
+        "cost lvl 1": 400,
+        "cost lvl 2": 800
+      },
+      "damage stats": {
+        "body": 55,
+        "head": 100,
+        "destroy body": 1,
+        "destroy head": 1,
+        "break damage body": 10,
+        "break damage head": 65
+      },
+      "upgrade stats": {
+        "spawn ammo base": 7,
+        "spawn ammo lvl 1": 9,
+        "spawn ammo lvl 2": 11,
+        "clip size base": 1,
+        "clip size lvl 1": 1,
+        "clip size lvl 2": 1
+      }
     },
     {
       "id": "scoped-semi",
@@ -482,24 +526,28 @@
       "reload": 4,
       "damage": 5,
       "accuracy": 8,
-      "more": [
-        {
-          "label": "Body Damage",
-          "value": "34%"
-        },
-        {
-          "label": "Head Damage",
-          "value": "75%"
-        },
-        {
-          "label": "Destroy Armour",
-          "value": "2 shots"
-        },
-        {
-          "label": "Execution",
-          "value": "2 shots"
-        }
-      ]
+      "general stats": {
+        "ammo cost": 220,
+        "ammo": 4,
+        "cost lvl 1": 400,
+        "cost lvl 2": 800
+      },
+      "damage stats": {
+        "body": 34,
+        "head": 68,
+        "destroy body": 2,
+        "destroy head": 2,
+        "break damage body": 25,
+        "break damage head": 35
+      },
+      "upgrade stats": {
+        "spawn ammo base": 7,
+        "spawn ammo lvl 1": 8,
+        "spawn ammo lvl 2": 9,
+        "clip size base": 8,
+        "clip size lvl 1": 11,
+        "clip size lvl 2": 14
+      }
     },
     {
       "id": "scoped-full",
@@ -520,24 +568,28 @@
       "reload": 4,
       "damage": 2,
       "accuracy": 6,
-      "more": [
-        {
-          "label": "Body Damage",
-          "value": "20%"
-        },
-        {
-          "label": "Head Damage",
-          "value": "50%"
-        },
-        {
-          "label": "Destroy Armour",
-          "value": "3 shots"
-        },
-        {
-          "label": "Execution",
-          "value": "3 shots"
-        }
-      ]
+      "general stats": {
+        "ammo cost": 200,
+        "ammo": 5,
+        "cost lvl 1": 400,
+        "cost lvl 2": 800
+      },
+      "damage stats": {
+        "body": 20,
+        "head": 40,
+        "destroy body": 3,
+        "destroy head": 3,
+        "break damage body": 17.5,
+        "break damage head": 20
+      },
+      "upgrade stats": {
+        "spawn ammo base": 12,
+        "spawn ammo lvl 1": 15,
+        "spawn ammo lvl 2": 18,
+        "clip size base": 12,
+        "clip size lvl 1": 15,
+        "clip size lvl 2": 18
+      }
     },
     {
       "id": "scoped-burst",
@@ -558,24 +610,28 @@
       "reload": 4,
       "damage": 3,
       "accuracy": 5,
-      "more": [
-        {
-          "label": "Body Damage",
-          "value": "22%"
-        },
-        {
-          "label": "Head Damage",
-          "value": "60%"
-        },
-        {
-          "label": "Destroy Armour",
-          "value": "3 shots"
-        },
-        {
-          "label": "Execution",
-          "value": "3 shots"
-        }
-      ]
+      "general stats": {
+        "ammo cost": 120,
+        "ammo": 3,
+        "cost lvl 1": 400,
+        "cost lvl 2": 800
+      },
+      "damage stats": {
+        "body": 22,
+        "head": 66,
+        "destroy body": 2,
+        "destroy head": 2,
+        "break damage body": 0,
+        "break damage head": 32.5
+      },
+      "upgrade stats": {
+        "spawn ammo base": 15,
+        "spawn ammo lvl 1": 18,
+        "spawn ammo lvl 2": 21,
+        "clip size base": 9,
+        "clip size lvl 1": 12,
+        "clip size lvl 2": 15
+      }
     },
     {
       "id": "variable",
@@ -596,24 +652,28 @@
       "reload": 4,
       "damage": 4,
       "accuracy": 8,
-      "more": [
-        {
-          "label": "Body Damage",
-          "value": "31%"
-        },
-        {
-          "label": "Head Damage",
-          "value": "60%"
-        },
-        {
-          "label": "Destroy Armour",
-          "value": "2 shots"
-        },
-        {
-          "label": "Execution",
-          "value": "2 shots"
-        }
-      ]
+      "general stats": {
+        "ammo cost": 150,
+        "ammo": 5,
+        "cost lvl 1": 400,
+        "cost lvl 2": 800
+      },
+      "damage stats": {
+        "body": 32,
+        "head": 64,
+        "destroy body": 2,
+        "destroy head": 2,
+        "break damage body": 20,
+        "break damage head": 27.5
+      },
+      "upgrade stats": {
+        "spawn ammo base": 9,
+        "spawn ammo lvl 1": 12,
+        "spawn ammo lvl 2": 15,
+        "clip size base": 12,
+        "clip size lvl 1": 12,
+        "clip size lvl 2": 16
+      }
     }
   ],
   "skill": [
@@ -1131,24 +1191,20 @@
       "reload": 4,
       "damage": 6,
       "accuracy": 5,
-      "more": [
-        {
-          "label": "Body Damage",
-          "value": "60%"
-        },
-        {
-          "label": "Head Damage",
-          "value": "60%"
-        },
-        {
-          "label": "Destroy Armour",
-          "value": "1 shot"
-        },
-        {
-          "label": "Execution",
-          "value": "1 shot"
-        }
-      ]
+      "general stats": {
+        "clip size": 2,
+        "purchase cost": 240,
+        "initial ammo cost": 280,
+        "ammo": 4
+      },
+      "damage stats": {
+        "body": 60,
+        "head": 60,
+        "destroy body": 1,
+        "destroy head": 2,
+        "break damage body": 17.5,
+        "break damage head": 20
+      }
     },
     {
       "id": "diablo",
@@ -1164,24 +1220,20 @@
       "reload": 3,
       "damage": 6,
       "accuracy": 8,
-      "more": [
-        {
-          "label": "Body Damage",
-          "value": "60%"
-        },
-        {
-          "label": "Head Damage",
-          "value": "100%"
-        },
-        {
-          "label": "Destroy Armour",
-          "value": "1 shot"
-        },
-        {
-          "label": "Execution",
-          "value": "1 shot"
-        }
-      ]
+      "general stats": {
+        "clip size": 6,
+        "purchase cost": 270,
+        "initial ammo cost": 315,
+        "ammo": 3
+      },
+      "damage stats": {
+        "body": 65,
+        "head": 100,
+        "destroy body": 1,
+        "destroy head": 1,
+        "break damage body": 20,
+        "break damage head": 30
+      }
     },
     {
       "id": "assault",
@@ -1197,24 +1249,20 @@
       "reload": 4,
       "damage": 3,
       "accuracy": 5,
-      "more": [
-        {
-          "label": "Body Damage",
-          "value": "20%"
-        },
-        {
-          "label": "Head Damage",
-          "value": "60%"
-        },
-        {
-          "label": "Destroy Armour",
-          "value": "3 shots"
-        },
-        {
-          "label": "Execution",
-          "value": "3 shots"
-        }
-      ]
+      "general stats": {
+        "clip size": 20,
+        "purchase cost": 300,
+        "initial ammo cost": 380,
+        "ammo": 10
+      },
+      "damage stats": {
+        "body": 20,
+        "head": 60,
+        "destroy body": 3,
+        "destroy head": 2,
+        "break damage body": 17.5,
+        "break damage head": 20
+      }
     },
     {
       "id": "shotgun",
@@ -1230,28 +1278,20 @@
       "reload": 3,
       "damage": 8,
       "accuracy": 5,
-      "more": [
-        {
-          "label": "Body Damage",
-          "value": "100%"
-        },
-        {
-          "label": "Head Damage",
-          "value": "100%"
-        },
-        {
-          "label": "Destroy Armour",
-          "value": "1 shot"
-        },
-        {
-          "label": "Execution",
-          "value": "1 shot"
-        },
-        {
-          "label": "",
-          "value": "* The Shorty, Shotgun, and Launcher are subject to 'effective distance' and have damage estimates."
-        }
-      ]
+      "general stats": {
+        "clip size": 6,
+        "purchase cost": 400,
+        "initial ammo cost": 480,
+        "ammo": 2
+      },
+      "damage stats": {
+        "body": 100,
+        "head": 100,
+        "destroy body": 1,
+        "destroy head": 1,
+        "break damage body": 70,
+        "break damage head": 15
+      }
     },
     {
       "id": "sniper",
@@ -1267,24 +1307,20 @@
       "reload": 3,
       "damage": 10,
       "accuracy": 9,
-      "more": [
-        {
-          "label": "Body Damage",
-          "value": "70%"
-        },
-        {
-          "label": "Head Damage",
-          "value": "100%"
-        },
-        {
-          "label": "Destroy Armour",
-          "value": "1 shot"
-        },
-        {
-          "label": "Execution",
-          "value": "1 shot"
-        }
-      ]
+      "general stats": {
+        "clip size": 6,
+        "purchase cost": 400,
+        "initial ammo cost": 480,
+        "ammo": 4
+      },
+      "damage stats": {
+        "body": 55,
+        "head": 100,
+        "destroy body": 1,
+        "destroy head": 1,
+        "break damage body": 10,
+        "break damage head": 70
+      }
     },
     {
       "id": "flamethrower",
@@ -1299,7 +1335,13 @@
       "rate": 9,
       "reload": 3,
       "damage": 2,
-      "accuracy": 4
+      "accuracy": 4,
+      "general stats": {
+        "clip size": 120,
+        "purchase cost": 240,
+        "initial ammo cost": 300,
+        "ammo": 30
+      }
     },
     {
       "id": "machete",
@@ -1311,16 +1353,20 @@
           "code": "82"
         }
       ],
-      "more": [
-        {
-          "label": "Body Damage",
-          "value": "34%"
-        },
-        {
-          "label": "Execution",
-          "value": "2 shots"
-        }
-      ]
+      "general stats": {
+        "clip size": 0,
+        "purchase cost": 400,
+        "initial ammo cost": 0,
+        "ammo": 0
+      },
+      "damage stats": {
+        "body": 40,
+        "head": 0,
+        "destroy body": 0,
+        "destroy head": 0,
+        "break damage body": 0,
+        "break damage head": 0
+      }
     },
     {
       "id": "spectre",
@@ -1336,24 +1382,20 @@
       "reload": 6,
       "damage": 1,
       "accuracy": 4,
-      "more": [
-        {
-          "label": "Body Damage",
-          "value": "18%"
-        },
-        {
-          "label": "Head Damage",
-          "value": "68%"
-        },
-        {
-          "label": "Destroy Armour",
-          "value": "3 shots"
-        },
-        {
-          "label": "Execution",
-          "value": "3 shots"
-        }
-      ]
+      "general stats": {
+        "clip size": 20,
+        "purchase cost": 315,
+        "initial ammo cost": 390,
+        "ammo": 15
+      },
+      "damage stats": {
+        "body": 17.5,
+        "head": 52.5,
+        "destroy body": 3,
+        "destroy head": 2,
+        "break damage body": 5,
+        "break damage head": 1
+      }
     },
     {
       "id": "launcher",
@@ -1369,28 +1411,20 @@
       "reload": 1,
       "damage": 5,
       "accuracy": 7,
-      "more": [
-        {
-          "label": "Body Damage",
-          "value": "58%"
-        },
-        {
-          "label": "Head Damage",
-          "value": "58%"
-        },
-        {
-          "label": "Destroy Armour",
-          "value": "1 shot"
-        },
-        {
-          "label": "Execution",
-          "value": "1 shot"
-        },
-        {
-          "label": "",
-          "value": "* The Shorty, Shotgun, and Launcher are subject to 'effective distance' and have damage estimates."
-        }
-      ]
+      "general stats": {
+        "clip size": 1,
+        "purchase cost": 345,
+        "initial ammo cost": 420,
+        "ammo": 3
+      },
+      "damage stats": {
+        "body": 55,
+        "head": 55,
+        "destroy body": 2,
+        "destroy head": 0,
+        "break damage body": 10,
+        "break damage head": 0
+      }
     },
     {
       "id": "crossbow",
@@ -1406,24 +1440,20 @@
       "reload": 2,
       "damage": 6,
       "accuracy": 7,
-      "more": [
-        {
-          "label": "Body Damage",
-          "value": "55%"
-        },
-        {
-          "label": "Head Damage",
-          "value": "110%"
-        },
-        {
-          "label": "Destroy Armour",
-          "value": "1 shot"
-        },
-        {
-          "label": "Execution",
-          "value": "1 shot"
-        }
-      ]
+      "general stats": {
+        "clip size": 1,
+        "purchase cost": 350,
+        "initial ammo cost": 380,
+        "ammo": 4
+      },
+      "damage stats": {
+        "body": 55,
+        "head": 100,
+        "destroy body": 1,
+        "destroy head": 1,
+        "break damage body": 10,
+        "break damage head": 65
+      }
     }
   ]
 }

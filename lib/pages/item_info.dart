@@ -1,7 +1,8 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tlou_loadout/loadout_model.dart';
-import 'package:tlou_loadout/services/weapon_stats.dart';
+import 'package:tlou_loadout/services/other_details.dart';
 
 class ItemInfo extends StatefulWidget {
   final Map item;
@@ -130,50 +131,49 @@ class _ItemInfoState extends State<ItemInfo> {
             ),
           ],
         ),
-        body: Padding(
+        body: ListView(
           padding: const EdgeInsets.all(8.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Text(
-                'SELECT LEVEL',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Theme.of(context).accentColor,
-                  fontSize: 25,
-                ),
-              ),
-              Row(
-                children: createLevelWidgets(),
-                mainAxisAlignment: MainAxisAlignment.center,
-              ),
-              Divider(
-                thickness: 2,
+          children: [
+            Text(
+              'SELECT LEVEL',
+              textAlign: TextAlign.center,
+              style: TextStyle(
                 color: Theme.of(context).accentColor,
+                fontSize: 25,
               ),
-              Row(
-                children: [
-                  Container(
-                    margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
-                    width: 80,
-                    height: 80,
-                    child: Image.asset(
-                      (() {
-                        if (widget.slot <= 1 ||
-                            widget.slot == 6 ||
-                            selectedLevel == 1) {
-                          return 'assets/icons/icon-${widget.item['id']}.png';
-                        } else {
-                          return 'assets/icons/icon-${widget.item['id']}-$selectedLevel.png';
-                        }
-                      }()),
-                      width: 70,
-                    ),
+            ),
+            Row(
+              children: createLevelWidgets(),
+              mainAxisAlignment: MainAxisAlignment.center,
+            ),
+            Divider(
+              thickness: 2,
+              color: Theme.of(context).accentColor,
+            ),
+            Row(
+              children: [
+                Container(
+                  margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
+                  width: 80,
+                  height: 80,
+                  child: Image.asset(
+                    (() {
+                      if (widget.slot <= 1 ||
+                          widget.slot == 6 ||
+                          selectedLevel == 1) {
+                        return 'assets/icons/icon-${widget.item['id']}.png';
+                      } else {
+                        return 'assets/icons/icon-${widget.item['id']}-$selectedLevel.png';
+                      }
+                    }()),
+                    width: 70,
                   ),
-                  Column(
+                ),
+                Expanded(
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      AutoSizeText(
                         (() {
                           if (widget.slot <= 1) {
                             if (selectedLevel == 1) {
@@ -185,6 +185,8 @@ class _ItemInfoState extends State<ItemInfo> {
                             return '${widget.item['name']} $selectedLevel';
                           }
                         }()),
+                        maxLines: 1,
+                        // minFontSize: 25,
                         style: TextStyle(
                           fontSize: 25,
                           color: Theme.of(context).accentColor,
@@ -198,31 +200,16 @@ class _ItemInfoState extends State<ItemInfo> {
                             if (canReplace) {
                               return Colors.lightBlue[200];
                             } else {
-                              return Colors.redAccent;
+                              return Colors.redAccent[700];
                             }
                           }()),
                         ),
                       ),
                     ],
                   ),
-                ],
-              ),
-              SizedBox(height: 10),
-              Text(
-                '${widget.item['levels'][selectedLevel - 1]['description']}',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Theme.of(context).accentColor,
                 ),
-              ),
-              WeaponStats(
-                  rate: widget.item['rate'],
-                  reload: widget.item['reload'],
-                  damage: widget.item['damage'],
-                  accuracy: widget.item['accuracy']),
-              Expanded(
-                child: Align(
-                  alignment: Alignment.bottomCenter,
+                Align(
+                  alignment: Alignment.centerRight,
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Opacity(
@@ -252,9 +239,22 @@ class _ItemInfoState extends State<ItemInfo> {
                     ),
                   ),
                 ),
+              ],
+            ),
+            SizedBox(height: 10),
+            Text(
+              '${widget.item['levels'][selectedLevel - 1]['description']}',
+              style: TextStyle(
+                fontSize: 20,
+                color: Theme.of(context).accentColor,
               ),
-            ],
-          ),
+            ),
+            SizedBox(height: 10),
+            OtherDetails(
+              slot: widget.slot,
+              item: widget.item,
+            ),
+          ],
         ),
       ),
     );
