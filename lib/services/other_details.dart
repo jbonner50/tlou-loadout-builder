@@ -65,58 +65,52 @@ class OtherDetails extends StatelessWidget {
 
     Widget generalStatsWidget(Map generalData) {
       if (slot <= 1) {
-        return Padding(
-          padding: EdgeInsets.all(12),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Text(
-                'Ammo (# / Cost) :  ${generalData['ammo']} / ${generalData['ammo cost']} Parts',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    color: Theme.of(context).accentColor, fontSize: 20),
-              ),
-              Text(
-                'Upgrade #1 :   ${generalData['cost lvl 1']} Parts',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    color: Theme.of(context).accentColor, fontSize: 20),
-              ),
-              Text(
-                'Upgrade #2 :   ${generalData['cost lvl 2']} Parts',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    color: Theme.of(context).accentColor, fontSize: 20),
-              ),
-            ],
-          ),
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              'Ammo (# / Cost) :  ${generalData['ammo']} / ${generalData['ammo cost']} Parts',
+              textAlign: TextAlign.left,
+              style:
+                  TextStyle(color: Theme.of(context).accentColor, fontSize: 20),
+            ),
+            Text(
+              'Upgrade #1 :   ${generalData['cost lvl 1']} Parts',
+              textAlign: TextAlign.left,
+              style:
+                  TextStyle(color: Theme.of(context).accentColor, fontSize: 20),
+            ),
+            Text(
+              'Upgrade #2 :   ${generalData['cost lvl 2']} Parts',
+              textAlign: TextAlign.left,
+              style:
+                  TextStyle(color: Theme.of(context).accentColor, fontSize: 20),
+            ),
+          ],
         );
       } else {
-        return Padding(
-          padding: EdgeInsets.all(12),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Text(
-                'Purchase Cost :   ${generalData['purchase cost']} Parts',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    color: Theme.of(context).accentColor, fontSize: 20),
-              ),
-              Text(
-                'Ammo (# / Initial Cost) :  ${generalData['ammo']} / ${generalData['initial ammo cost']} Parts',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    color: Theme.of(context).accentColor, fontSize: 20),
-              ),
-              Text(
-                'Clip Size :   ${generalData['clip size']}',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    color: Theme.of(context).accentColor, fontSize: 20),
-              ),
-            ],
-          ),
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              'Purchase Cost :   ${generalData['purchase cost']} Parts',
+              textAlign: TextAlign.left,
+              style:
+                  TextStyle(color: Theme.of(context).accentColor, fontSize: 20),
+            ),
+            Text(
+              'Ammo (# / Initial Cost) :  ${generalData['ammo']} / ${generalData['initial ammo cost']} Parts',
+              textAlign: TextAlign.left,
+              style:
+                  TextStyle(color: Theme.of(context).accentColor, fontSize: 20),
+            ),
+            Text(
+              'Clip Size :   ${generalData['clip size']}',
+              textAlign: TextAlign.left,
+              style:
+                  TextStyle(color: Theme.of(context).accentColor, fontSize: 20),
+            ),
+          ],
         );
       }
     }
@@ -436,6 +430,12 @@ class OtherDetails extends StatelessWidget {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            statBars(),
+            Divider(
+              thickness: 2,
+              height: 30,
+              color: Theme.of(context).accentColor,
+            ),
             Text(
               'General Stats',
               textAlign: TextAlign.left,
@@ -443,8 +443,13 @@ class OtherDetails extends StatelessWidget {
                   TextStyle(color: Theme.of(context).accentColor, fontSize: 25),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(12, 0, 12, 16),
+              padding: const EdgeInsets.fromLTRB(12, 12, 12, 0),
               child: generalStatsWidget(generalData),
+            ),
+            Divider(
+              thickness: 2,
+              height: 30,
+              color: Theme.of(context).accentColor,
             ),
             Text(
               'Damage Stats',
@@ -453,8 +458,13 @@ class OtherDetails extends StatelessWidget {
                   TextStyle(color: Theme.of(context).accentColor, fontSize: 25),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(12, 0, 12, 16),
+              padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
               child: damageStatsWidget(damageData),
+            ),
+            Divider(
+              thickness: 2,
+              height: 30,
+              color: Theme.of(context).accentColor,
             ),
             Text(
               'Upgrade Stats',
@@ -475,6 +485,12 @@ class OtherDetails extends StatelessWidget {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            statBars(),
+            Divider(
+              thickness: 2,
+              height: 30,
+              color: Theme.of(context).accentColor,
+            ),
             Text(
               'General Stats',
               textAlign: TextAlign.left,
@@ -482,8 +498,13 @@ class OtherDetails extends StatelessWidget {
                   TextStyle(color: Theme.of(context).accentColor, fontSize: 25),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(12, 0, 12, 16),
+              padding: const EdgeInsets.fromLTRB(12, 12, 12, 0),
               child: generalStatsWidget(generalData),
+            ),
+            Divider(
+              thickness: 2,
+              height: 30,
+              color: Theme.of(context).accentColor,
             ),
             Text(
               'Damage Stats',
@@ -501,43 +522,10 @@ class OtherDetails extends StatelessWidget {
       return Container();
     }
 
-    if (slot <= 1) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          statBars(),
-          Divider(
-            thickness: 2,
-            height: 30,
-            color: Theme.of(context).accentColor,
-          ),
-          statsWidgets(),
-        ],
-      );
-    } else if (slot == 6) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          statBars(),
-          Divider(
-            thickness: 2,
-            height: 30,
-            color: Theme.of(context).accentColor,
-          ),
-          statsWidgets(),
-        ],
-      );
+    if (slot <= 1 || slot == 6) {
+      return statsWidgets();
     } else {
-      return Column(
-        children: [
-          Divider(
-            thickness: 2,
-            height: 30,
-            color: Theme.of(context).accentColor,
-          ),
-          statsWidgets(),
-        ],
-      );
+      return Container();
     }
   }
 }

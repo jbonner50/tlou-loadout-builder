@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tlou_loadout/loadout_model.dart';
 import 'package:tlou_loadout/my_loadouts_model.dart';
+import 'package:tlou_loadout/pages/item_select.dart';
 import 'package:tlou_loadout/pages/loadout_builder.dart';
 import 'package:tlou_loadout/pages/my_loadouts.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 
 class App extends StatefulWidget {
   @override
@@ -17,9 +19,25 @@ class _AppState extends State<App> {
   AssetImage bg;
   final titleController = TextEditingController();
 
+  void initDynamicLinks() async {
+    final PendingDynamicLinkData data =
+        await FirebaseDynamicLinks.instance.getInitialLink();
+    final Uri deeplink = data?.link;
+
+    if (deeplink.path == '?q=01082617171775') {
+      Navigator.of(context).push(
+        PageRouteBuilder(
+          pageBuilder: (_, __, ___) => ItemSelect(),
+          transitionDuration: Duration(seconds: 0),
+        ),
+      );
+    }
+  }
+
   @override
   void initState() {
     super.initState();
+    initDynamicLinks();
     bg = AssetImage('assets/bg.jpg');
     getApplicationDocumentsDirectory().then((Directory directory) {
       Provider.of<MyLoadoutsModel>(context, listen: false).jsonFile =
@@ -66,8 +84,8 @@ class _AppState extends State<App> {
           //title: Text('Enter loadout title:'),
           contentPadding: EdgeInsets.fromLTRB(16, 16, 16, 0),
           content: TextField(
-            controller: titleController,
             textCapitalization: TextCapitalization.characters,
+            controller: titleController,
             decoration: InputDecoration(
               hintText: 'ENTER LOADOUT NAME',
               border: OutlineInputBorder(),
@@ -107,7 +125,7 @@ class _AppState extends State<App> {
       LoadoutBuilder(),
       MyLoadouts(),
     ],
-    'title': ['Loadout Builder', 'My Loadouts']
+    'title': ['BUILDER', 'MY LOADOUTS']
   };
 
   @override
@@ -180,7 +198,9 @@ class _AppState extends State<App> {
                       ),
                       IconButton(
                         icon: Icon(
-                          loadoutModel.wasJustSent ? Icons.done : Icons.save,
+                          loadoutModel.wasJustSent
+                              ? Icons.done
+                              : Icons.bookmark_border,
                           color: Theme.of(context).accentColor,
                         ),
                         onPressed: () {
@@ -204,9 +224,9 @@ class _AppState extends State<App> {
                                 color: Theme.of(context).accentColor,
                               ),
                               onPressed: () {
+                                loadoutModel.resetLoadout();
                                 loadoutModel.setWasJustSent(false);
                                 loadoutModel.setCurrentIndex(1);
-                                loadoutModel.resetLoadout();
                               },
                             )
                           : Container(),
@@ -244,11 +264,11 @@ class _AppState extends State<App> {
                   items: [
                     BottomNavigationBarItem(
                       icon: Icon(Icons.build),
-                      title: Text('Loadout Builder'),
+                      title: Text('BUILDER'),
                     ),
                     BottomNavigationBarItem(
-                      icon: Icon(Icons.collections_bookmark),
-                      title: Text('My Loadouts'),
+                      icon: Icon(Icons.book),
+                      title: Text('MY LOADOUTS'),
                     ),
                   ],
                   onTap: (index) =>

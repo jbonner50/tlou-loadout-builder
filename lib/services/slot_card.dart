@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tlou_loadout/loadout_model.dart';
+import 'package:tlou_loadout/my_loadouts_model.dart';
 import 'package:tlou_loadout/pages/item_select.dart';
 
 class SlotCard extends StatelessWidget {
@@ -25,11 +26,14 @@ class SlotCard extends StatelessWidget {
             ),
           );
           if (equippedIdLevel != null) {
+            print(Provider.of<MyLoadoutsModel>(context, listen: false)
+                .jsonFileContent);
             loadoutModel.equipItem(
-              equippedIdLevel['id'],
-              equippedIdLevel['level'],
+              equippedIdLevel,
               slot,
             );
+            print(Provider.of<MyLoadoutsModel>(context, listen: false)
+                .jsonFileContent);
           }
         }
 

@@ -7,13 +7,6 @@ import 'package:tlou_loadout/services/loadout_card.dart';
 class MyLoadouts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Future<Map> getSavedLoadouts() async {
-      var jsonText = await Provider.of<MyLoadoutsModel>(context, listen: false)
-          .jsonFile
-          .readAsString();
-      return json.decode(jsonText);
-    }
-
     Widget noSavedLoadouts() {
       return Center(
           child: Text(

@@ -96,9 +96,9 @@ class LoadoutModel extends ChangeNotifier {
 
   int points = 13;
 
-  void equipItem(String id, int level, int slot) {
-    loadout[slot]['id'] = id;
-    loadout[slot]['level'] = level;
+  void equipItem(Map item, int slot) {
+    loadout[slot] = item;
+
     updatePoints();
     notifyListeners();
   }
@@ -148,7 +148,7 @@ class LoadoutModel extends ChangeNotifier {
   }
 
   void sendToBuilder(String name, List newLoadout) {
-    loadout = newLoadout;
+    loadout = List.from(newLoadout);
     wasJustSent = true;
     loadoutNameJustSent = name;
     currentIndex = 0;
