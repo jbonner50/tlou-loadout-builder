@@ -1433,7 +1433,7 @@
         {
           "description": "Two shots to down. Press X to zoom while aiming to use the scope. Anyone shot by a crossbow sill begin taking bleeding damage and go down unless they use a health kit or be healed by other means.",
           "cost": 3,
-          "code": ""
+          "code": "92"
         }
       ],
       "rate": 2,

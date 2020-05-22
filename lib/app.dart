@@ -1,14 +1,13 @@
 import 'dart:io';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:tlou_loadout/loadout_model.dart';
 import 'package:tlou_loadout/my_loadouts_model.dart';
-import 'package:tlou_loadout/pages/item_select.dart';
 import 'package:tlou_loadout/pages/loadout_builder.dart';
 import 'package:tlou_loadout/pages/my_loadouts.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 
 class App extends StatefulWidget {
   @override
@@ -19,25 +18,9 @@ class _AppState extends State<App> {
   AssetImage bg;
   final titleController = TextEditingController();
 
-  void initDynamicLinks() async {
-    final PendingDynamicLinkData data =
-        await FirebaseDynamicLinks.instance.getInitialLink();
-    final Uri deeplink = data?.link;
-
-    if (deeplink.path == '?q=01082617171775') {
-      Navigator.of(context).push(
-        PageRouteBuilder(
-          pageBuilder: (_, __, ___) => ItemSelect(),
-          transitionDuration: Duration(seconds: 0),
-        ),
-      );
-    }
-  }
-
   @override
   void initState() {
     super.initState();
-    initDynamicLinks();
     bg = AssetImage('assets/bg.jpg');
     getApplicationDocumentsDirectory().then((Directory directory) {
       Provider.of<MyLoadoutsModel>(context, listen: false).jsonFile =
@@ -251,7 +234,48 @@ class _AppState extends State<App> {
                       ),
                     ];
                   } else {
-                    return null;
+                    return <Widget>[
+                      Builder(
+                        builder: (context) => IconButton(
+                          icon: Icon(
+                            Icons.save_alt,
+                            color: Theme.of(context).accentColor,
+                          ),
+                          onPressed: () async {
+                            ClipboardData data =
+                                await Clipboard.getData('text/plain');
+                            List importedLoadout = Provider.of<LoadoutModel>(
+                                    context,
+                                    listen: false)
+                                .importLoadout(data.text);
+                            if (importedLoadout != null) {
+                              Provider.of<LoadoutModel>(context, listen: false)
+                                  .loadout = [...importedLoadout];
+                              showSaveLoadoutAlert();
+                            } else {
+                              final snackBar = SnackBar(
+                                backgroundColor: Colors.black45,
+                                duration: Duration(seconds: 1),
+                                content: Text(
+                                  'Loadout link in clipboard is invalid',
+                                  style: TextStyle(
+                                    fontFamily: 'TLOU',
+                                    color: Color.fromARGB(255, 234, 234, 219),
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              );
+
+                              Scaffold.of(context).showSnackBar(snackBar);
+                            }
+                            //check if clipboard is url and automatically grab if it is
+                            //else ask for text input
+                            //save loadout with imported loadout
+                            //show snackbar when completed
+                          },
+                        ),
+                      ),
+                    ];
                   }
                 }()),
               ),

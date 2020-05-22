@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class LoadoutModel extends ChangeNotifier {
   int currentIndex = 0;
@@ -212,5 +213,121 @@ class LoadoutModel extends ChangeNotifier {
       }
     }
     return id;
+  }
+
+  String copyLoadoutLink(List loadoutToShare) {
+    String url = 'http://tlou-loadout.com/?q=';
+    loadoutToShare.forEach((item) {
+      String code =
+          findFullItem(item['id'], loadoutToShare.indexOf(item))['levels']
+              [item['level'] - 1]['code'];
+      url += code;
+    });
+    ClipboardData data = ClipboardData(text: url);
+    Clipboard.setData(data);
+  }
+
+  List importLoadout(String url) {
+    List importedLoadout = [];
+    Uri uri = Uri.dataFromString(url);
+    String codes = uri.queryParameters['q'];
+    print(codes);
+    if (codes == null) {
+      return null;
+    } else if (codes.length < 14) {
+      return null;
+    }
+    String smallCode = codes.substring(0, 2);
+    String largeCode = codes.substring(2, 4);
+    String skill1Code = codes.substring(4, 6);
+    String skill2Code = codes.substring(6, 8);
+    String skill3Code = codes.substring(8, 10);
+    String skill4Code = codes.substring(10, 12);
+    String purchaseCode = codes.substring(12, 14);
+
+    OUTER:
+    for (var item in small) {
+      for (var level in item['levels']) {
+        if (level['code'] == smallCode) {
+          importedLoadout.add(
+              {'id': item['id'], 'level': item['levels'].indexOf(level) + 1});
+          break OUTER;
+        }
+      }
+    }
+    if (importedLoadout.length < 1) {
+      return null;
+    }
+    OUTER:
+    for (var item in large) {
+      for (var level in item['levels']) {
+        if (level['code'] == largeCode) {
+          importedLoadout.add(
+              {'id': item['id'], 'level': item['levels'].indexOf(level) + 1});
+          break OUTER;
+        }
+      }
+    }
+    if (importedLoadout.length < 2) {
+      return null;
+    }
+
+    Map skill1, skill2, skill3, skill4;
+    for (var item in skill) {
+      for (var level in item['levels']) {
+        if (level['code'] == skill1Code) {
+          skill1 = {
+            'id': item['id'],
+            'level': item['levels'].indexOf(level) + 1
+          };
+        }
+        if (level['code'] == skill2Code) {
+          skill2 = {
+            'id': item['id'],
+            'level': item['levels'].indexOf(level) + 1
+          };
+        }
+        if (level['code'] == skill3Code) {
+          skill3 = {
+            'id': item['id'],
+            'level': item['levels'].indexOf(level) + 1
+          };
+        }
+        if (level['code'] == skill4Code) {
+          skill4 = {
+            'id': item['id'],
+            'level': item['levels'].indexOf(level) + 1
+          };
+        }
+      }
+    }
+    print(skill1Code);
+    print(skill2Code);
+    print(skill3Code);
+    print(skill4Code);
+    if (skill1 == null || skill2 == null || skill3 == null || skill4 == null) {
+      return null;
+    }
+    print('got here');
+    importedLoadout.add(skill1);
+    importedLoadout.add(skill2);
+    importedLoadout.add(skill3);
+    importedLoadout.add(skill4);
+
+    OUTER:
+    for (var item in purchase) {
+      for (var level in item['levels']) {
+        if (level['code'] == purchaseCode) {
+          importedLoadout.add(
+              {'id': item['id'], 'level': item['levels'].indexOf(level) + 1});
+          break OUTER;
+        }
+      }
+    }
+    if (importedLoadout.length < 7) {
+      return null;
+    }
+
+    return importedLoadout;
   }
 }

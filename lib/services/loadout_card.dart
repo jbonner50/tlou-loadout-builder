@@ -177,6 +177,30 @@ class _LoadoutCardState extends State<LoadoutCard> {
                 ),
                 IconButton(
                   icon: Icon(
+                    Icons.link,
+                    color: Theme.of(context).accentColor,
+                  ),
+                  onPressed: () {
+                    Provider.of<LoadoutModel>(context, listen: false)
+                        .copyLoadoutLink(widget.loadout);
+                    final snackBar = SnackBar(
+                      backgroundColor: Colors.black45,
+                      duration: Duration(seconds: 1),
+                      content: Text(
+                        'Loadout link copied to clipboard!',
+                        style: TextStyle(
+                          fontFamily: 'TLOU',
+                          color: Color.fromARGB(255, 234, 234, 219),
+                          fontSize: 15,
+                        ),
+                      ),
+                    );
+
+                    Scaffold.of(context).showSnackBar(snackBar);
+                  },
+                ),
+                IconButton(
+                  icon: Icon(
                     Icons.content_copy,
                     color: Theme.of(context).accentColor,
                   ),

@@ -26,14 +26,10 @@ class SlotCard extends StatelessWidget {
             ),
           );
           if (equippedIdLevel != null) {
-            print(Provider.of<MyLoadoutsModel>(context, listen: false)
-                .jsonFileContent);
             loadoutModel.equipItem(
               equippedIdLevel,
               slot,
             );
-            print(Provider.of<MyLoadoutsModel>(context, listen: false)
-                .jsonFileContent);
           }
         }
 
