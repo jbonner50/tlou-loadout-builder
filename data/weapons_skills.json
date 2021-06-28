@@ -1354,18 +1354,8 @@
         }
       ],
       "general stats": {
-        "clip size": 0,
-        "purchase cost": 400,
-        "initial ammo cost": 0,
-        "ammo": 0
-      },
-      "damage stats": {
-        "body": 40,
-        "head": 0,
-        "destroy body": 0,
-        "destroy head": 0,
-        "break damage body": 0,
-        "break damage head": 0
+        "damage": 40,
+        "initial purchase cost": 400
       }
     },
     {

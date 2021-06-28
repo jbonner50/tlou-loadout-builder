@@ -22,12 +22,13 @@ class LoadoutManager extends StatelessWidget {
   Widget build(BuildContext context) {
     Future<void> loadJsonData() async {
       String jsonText = await rootBundle.loadString('data/weapons_skills.json');
-      Provider.of<LoadoutModel>(context, listen: false).data =
-          json.decode(jsonText);
+      Provider.of<LoadoutModel>(context, listen: false)
+          .updateData(json.decode(jsonText));
     }
 
     loadJsonData();
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: App(),
       theme: ThemeData(
         dividerColor: Color.fromARGB(255, 234, 234, 219),

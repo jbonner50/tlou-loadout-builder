@@ -92,6 +92,7 @@ class _ItemInfoState extends State<ItemInfo> {
         ),
       ),
       child: Scaffold(
+        resizeToAvoidBottomPadding: false,
         backgroundColor: Colors.transparent,
         appBar: AppBar(
           bottom: PreferredSize(

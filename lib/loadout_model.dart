@@ -90,10 +90,24 @@ class LoadoutModel extends ChangeNotifier {
     ]
   };
 
+  void updateData(Map newData) {
+    data = Map.from(newData);
+    small = data['small'];
+    large = data['large'];
+    skill = data['skill'];
+    purchase = data['purchase'];
+    notifyListeners();
+  }
+
   List get small => data['small'];
   List get large => data['large'];
   List get purchase => data['purchase'];
   List get skill => data['skill'];
+
+  set small(List newSmall) => newSmall;
+  set large(List newLarge) => newLarge;
+  set skill(List newSkill) => newSkill;
+  set purchase(List newPurchase) => newPurchase;
 
   int points = 13;
 

@@ -44,6 +44,7 @@ class _LoadoutCardState extends State<LoadoutCard> {
           content: TextField(
             controller: titleController,
             textCapitalization: TextCapitalization.characters,
+            style: TextStyle(fontSize: 25),
             decoration: InputDecoration(
               hintText: 'ENTER COPY NAME',
               border: OutlineInputBorder(),
@@ -62,7 +63,10 @@ class _LoadoutCardState extends State<LoadoutCard> {
           ),
           actions: <Widget>[
             FlatButton(
-              child: Text('Save'),
+              child: Text(
+                'Save',
+                style: TextStyle(fontSize: 20),
+              ),
               onPressed: () {
                 if (titleController.text.isNotEmpty) {
                   Navigator.of(context).pop();
@@ -187,7 +191,7 @@ class _LoadoutCardState extends State<LoadoutCard> {
                       backgroundColor: Colors.black45,
                       duration: Duration(seconds: 1),
                       content: Text(
-                        'Loadout link copied to clipboard!',
+                        'Link copied to clipboard!',
                         style: TextStyle(
                           fontFamily: 'TLOU',
                           color: Color.fromARGB(255, 234, 234, 219),

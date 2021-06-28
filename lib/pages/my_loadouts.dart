@@ -49,7 +49,9 @@ class MyLoadouts extends StatelessWidget {
               return noSavedLoadouts();
             }
           } else {
-            return noSavedLoadouts();
+            return Container(
+              color: Colors.red,
+            );
           }
         } else {
           return noSavedLoadouts();

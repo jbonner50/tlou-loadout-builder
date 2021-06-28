@@ -69,6 +69,7 @@ class _AppState extends State<App> {
           content: TextField(
             textCapitalization: TextCapitalization.characters,
             controller: titleController,
+            style: TextStyle(fontSize: 25),
             decoration: InputDecoration(
               hintText: 'ENTER LOADOUT NAME',
               border: OutlineInputBorder(),
@@ -85,7 +86,10 @@ class _AppState extends State<App> {
           ),
           actions: <Widget>[
             FlatButton(
-              child: Text('Save'),
+              child: Text(
+                'Save',
+                style: TextStyle(fontSize: 20),
+              ),
               onPressed: () {
                 if (titleController.text.isNotEmpty) {
                   Navigator.of(context).pop();
@@ -142,6 +146,7 @@ class _AppState extends State<App> {
               ),
             ),
             child: Scaffold(
+              resizeToAvoidBottomPadding: false,
               backgroundColor: Colors.transparent,
               appBar: AppBar(
                 bottom: PreferredSize(
@@ -255,9 +260,9 @@ class _AppState extends State<App> {
                             } else {
                               final snackBar = SnackBar(
                                 backgroundColor: Colors.black45,
-                                duration: Duration(seconds: 1),
+                                duration: Duration(seconds: 2),
                                 content: Text(
-                                  'Loadout link in clipboard is invalid',
+                                  'Copied link must follow format: http://tlou-loadout.com/?q=##############',
                                   style: TextStyle(
                                     fontFamily: 'TLOU',
                                     color: Color.fromARGB(255, 234, 234, 219),
@@ -284,6 +289,8 @@ class _AppState extends State<App> {
                   backgroundColor: Colors.black45,
                   unselectedItemColor: Colors.grey[600],
                   selectedItemColor: Theme.of(context).accentColor,
+                  selectedFontSize: 15,
+                  unselectedFontSize: 15,
                   currentIndex: currentIndex,
                   items: [
                     BottomNavigationBarItem(
@@ -291,7 +298,7 @@ class _AppState extends State<App> {
                       title: Text('BUILDER'),
                     ),
                     BottomNavigationBarItem(
-                      icon: Icon(Icons.book),
+                      icon: Icon(Icons.collections_bookmark),
                       title: Text('MY LOADOUTS'),
                     ),
                   ],

@@ -88,7 +88,7 @@ class OtherDetails extends StatelessWidget {
             ),
           ],
         );
-      } else {
+      } else if (generalData.length > 2) {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -106,6 +106,24 @@ class OtherDetails extends StatelessWidget {
             ),
             Text(
               'Clip Size :   ${generalData['clip size']}',
+              textAlign: TextAlign.left,
+              style:
+                  TextStyle(color: Theme.of(context).accentColor, fontSize: 20),
+            ),
+          ],
+        );
+      } else {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              'Damage :  ${generalData['damage']} %',
+              textAlign: TextAlign.left,
+              style:
+                  TextStyle(color: Theme.of(context).accentColor, fontSize: 20),
+            ),
+            Text(
+              'Initial Purchase Cost :   ${generalData['initial purchase cost']} Parts',
               textAlign: TextAlign.left,
               style:
                   TextStyle(color: Theme.of(context).accentColor, fontSize: 20),
@@ -214,7 +232,7 @@ class OtherDetails extends StatelessWidget {
             DataCell(
               Center(
                 child: Text(
-                  '${damageData['destroy head']}',
+                  '${damageData['destroy head'] != 0 ? damageData['destroy head'] : 'N/A'}',
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontFamily: 'TLOU',
@@ -485,7 +503,7 @@ class OtherDetails extends StatelessWidget {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            statBars(),
+            item['id'] != 'machete' ? statBars() : Container(),
             Divider(
               thickness: 2,
               height: 30,
@@ -501,21 +519,25 @@ class OtherDetails extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(12, 12, 12, 0),
               child: generalStatsWidget(generalData),
             ),
-            Divider(
-              thickness: 2,
-              height: 30,
-              color: Theme.of(context).accentColor,
-            ),
-            Text(
-              'Damage Stats',
-              textAlign: TextAlign.left,
-              style:
-                  TextStyle(color: Theme.of(context).accentColor, fontSize: 25),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(12, 0, 12, 16),
-              child: damageStatsWidget(damageData),
-            ),
+            item['id'] != 'machete' && item['id'] != 'flamethrower'
+                ? Divider(
+                    thickness: 2,
+                    height: 30,
+                    color: Theme.of(context).accentColor,
+                  )
+                : Container(),
+            item['id'] != 'machete' && item['id'] != 'flamethrower'
+                ? Text('Damage Stats',
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                        color: Theme.of(context).accentColor, fontSize: 25))
+                : Container(),
+            item['id'] != 'machete' && item['id'] != 'flamethrower'
+                ? Padding(
+                    padding: const EdgeInsets.fromLTRB(12, 0, 12, 16),
+                    child: damageStatsWidget(damageData),
+                  )
+                : Container(),
           ],
         );
       }
