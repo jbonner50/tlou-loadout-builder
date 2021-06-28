@@ -1,16 +1,11 @@
-# tlou_loadout
+# The Last of Us - Loadout Builder
 
-A new Flutter project.
+This is a loadout builder for the popular Factions mode of "The Last of Us" by Naughty Dog. This app allows you to save custom loadouts for reference and gives you detailed statistics on the perks and weapons within the game. It is also loosely integrated with https://tlou-loadout.com to save links from other Reddit users and share URLs.
 
-## Getting Started
+![Loadout Builder Screen](builder.jpg)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+![Item Stats Screen](stats.jpg)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Saved Loadouts Screen](loadouts.jpg)
